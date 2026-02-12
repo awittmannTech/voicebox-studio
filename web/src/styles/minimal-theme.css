@@ -1,0 +1,196 @@
+/* Minimal Theme - Apple-Inspired Design System */
+/* IMPORTANT: This must override the base theme */
+
+:root {
+  /* Base Colors - High contrast light theme */
+  --background: 0 0% 98% !important;           /* #FAFAFA - Very light gray background */
+  --foreground: 0 0% 13% !important;           /* #212121 - Near black text */
+
+  /* Surface Colors */
+  --card: 0 0% 100% !important;                /* #FFFFFF - Pure white cards */
+  --card-foreground: 0 0% 13% !important;      /* #212121 - Dark text on cards */
+
+  --popover: 0 0% 100% !important;             /* #FFFFFF - White popovers */
+  --popover-foreground: 0 0% 13% !important;   /* #212121 - Dark text in popovers */
+
+  /* Accent Colors (iOS Green) - FORCE OVERRIDE */
+  --primary: 142 76% 36% !important;           /* #34C759 - iOS system green */
+  --primary-foreground: 0 0% 100% !important;  /* #FFFFFF - White text on green */
+
+  --accent: 142 76% 36% !important;            /* #34C759 - Same as primary */
+  --accent-foreground: 0 0% 100% !important;   /* #FFFFFF - White text on green */
+
+  /* Secondary Colors */
+  --secondary: 0 0% 96% !important;            /* #F5F5F5 - Very light gray */
+  --secondary-foreground: 0 0% 13% !important; /* #212121 - Dark text */
+
+  --muted: 0 0% 96% !important;                /* #F5F5F5 - Very light gray for subtle backgrounds */
+  --muted-foreground: 0 0% 45% !important;     /* #737373 - Medium gray for secondary text */
+
+  --border: 0 0% 90% !important;               /* #E5E5E5 - Light border */
+  --input: 0 0% 90% !important;                /* #E5E5E5 - Input borders */
+  --ring: 142 76% 36% !important;              /* #34C759 - Green focus ring */
+
+  /* Status Colors */
+  --success: 142 76% 36%;           /* #34C759 - Green for success */
+  --warning: 35 91% 62%;            /* #F59E0B - Amber for warnings */
+  --destructive: 0 84% 60%;         /* #EF4444 - Red for errors/delete */
+  --info: 221 83% 53%;              /* #3B82F6 - Blue for info */
+
+  /* Border Radius */
+  --radius: 12px;                   /* Default card/input radius */
+  --radius-sm: 8px;                 /* Small elements (badges, tags) */
+  --radius-md: 12px;                /* Cards, inputs */
+  --radius-lg: 16px;                /* Modals, large containers */
+}
+
+/* Typography - Apple-inspired font stack */
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 15px;                  /* 15px - Apple standard body text */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Monospace font for code */
+code, pre {
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+}
+
+/* Elevation & Shadows */
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-elevated {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-active {
+  box-shadow: 0 2px 6px rgba(52, 199, 89, 0.25);
+}
+
+/* Transitions */
+.transition-fast {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-base {
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-slow {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale-in {
+  animation: scale-in 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-up {
+  animation: slide-up 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Component overrides for minimal design */
+
+/* Buttons - Full rounded style */
+button {
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cards - Subtle shadow */
+[data-minimal-card] {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+/* Inputs - Clean borders */
+input, textarea, select {
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border));
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsla(142, 76%, 36%, 0.2);
+}
+
+/* Tables - Minimal borders */
+table {
+  border-collapse: collapse;
+}
+
+tbody tr {
+  border-bottom: 1px solid hsl(var(--border));
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+tbody tr:hover {
+  background-color: hsl(var(--muted));
+}
+
+/* Disable dark mode (light theme only for MVP) */
+.dark {
+  /* Override dark theme - use light theme values */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 13%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 142 76% 36%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 142 76% 36%;
+}

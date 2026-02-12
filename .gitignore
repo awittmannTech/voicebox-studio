@@ -1,0 +1,181 @@
+# ============================================
+# Node.js / Bun Dependencies
+# ============================================
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+bun.lockb
+
+# ============================================
+# Python Dependencies & Virtual Environments
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+*.egg
+MANIFEST
+
+# ============================================
+# Build Outputs & Distribution
+# ============================================
+dist/
+build/
+out/
+target/
+*.app
+*.dmg
+*.exe
+*.msi
+*.deb
+*.AppImage
+*.rpm
+
+# Tauri build artifacts
+tauri/src-tauri/target/
+tauri/src-tauri/binaries/*
+!tauri/src-tauri/binaries/.gitkeep
+
+# ============================================
+# Machine Learning Models & Cache
+# ============================================
+# HuggingFace cache
+.cache/
+huggingface/
+models/
+*.pth
+*.pt
+*.onnx
+*.bin
+*.safetensors
+
+# Voice prompts cache
+*.prompt
+data/cache/
+
+# ============================================
+# Data & User Content
+# ============================================
+data/profiles/*
+data/generations/*
+data/projects/*
+data/stories/*
+data/voicebox.db
+data/voicebox.db-shm
+data/voicebox.db-wal
+data/voicebox.db.backup
+!data/.gitkeep
+!data/**/.gitkeep
+backend/data/
+
+# ============================================
+# IDE & Editor Settings
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ============================================
+# Operating System Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# Logs
+# ============================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================
+# Environment & Secrets
+# ============================================
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# ============================================
+# Generated & Temporary Files
+# ============================================
+# Generated API client
+app/openapi.json
+app/src/lib/api/core/
+app/src/lib/api/models/
+app/src/lib/api/schemas/
+app/src/lib/api/services/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+.tmp/
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Misc
+*.orig
+.vercel
+.next
+.nuxt
+.output
+.vite
+
+# ============================================
+# Platform Specific
+# ============================================
+# Windows
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+nul
